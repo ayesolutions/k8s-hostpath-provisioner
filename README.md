@@ -1,1 +1,3 @@
-# template-golang
+# Kubernetes hostpath provisioner
+
+

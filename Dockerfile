@@ -4,6 +4,5 @@ COPY . .
 RUN go build
 
 FROM debian:buster-slim
-#RUN apt-get update && apt-get install -y extra-runtime-dependencies && rm -rf /var/lib/apt/lists/*
-COPY --from=builder /usr/src/template-golang /usr/local/bin/template-golang
-CMD ["template-golang"]
+COPY --from=builder /usr/src/k8s-hostpath-provisioner /usr/local/bin/k8s-hostpath-provisioner
+CMD ["k8s-hostpath-provisioner"]
